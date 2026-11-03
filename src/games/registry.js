@@ -1,0 +1,28 @@
+import { stack } from './stack.js';
+import { race } from './race.js';
+import { snake } from './snake.js';
+import { blaster } from './blaster.js';
+import { sub } from './sub.js';
+import { tank } from './tank.js';
+import { frog } from './frog.js';
+import { bird } from './bird.js';
+import { brickout } from './brickout.js';
+import { maze } from './maze.js';
+import { jump } from './jump.js';
+import { climb } from './climb.js';
+import { tennis } from './tennis.js';
+import { hockey } from './hockey.js';
+import { ski } from './ski.js';
+import { basket } from './catch.js';
+import { mole } from './mole.js';
+import { match } from './match.js';
+import { bowl } from './bowl.js';
+import { ants } from './ants.js';
+import { fish } from './fish.js';
+import { dart } from './dart.js';
+import { heli } from './heli.js';
+import { land } from './land.js';
+
+export const CLASSICS = [stack, race, snake, blaster, sub, tank, frog, bird, brickout, maze, jump, climb];
+export const ARCADE = [tennis, hockey, ski, basket, mole, match, bowl, ants, fish, dart, heli, land];
+export const ALL = [...CLASSICS, ...ARCADE];

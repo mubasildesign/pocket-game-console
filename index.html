@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pocket Grid</title>
+  <link rel="stylesheet" href="styles.css?v=8" />
+</head>
+<body>
+  <button class="burger" id="burger" type="button" aria-label="Open scores" aria-expanded="false" aria-controls="board">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="scrim" id="scrim" hidden></div>
+  <div class="viewport">
+    <div class="desk-wrap" id="desk-wrap">
+      <div class="desk" id="desk">
+        <aside class="board" id="board" aria-label="Leaderboard">
+          <div class="board-head">
+            <p class="board-kicker">Leaderboard</p>
+            <button class="board-close" id="board-close" type="button" aria-label="Close scores">X</button>
+          </div>
+          <label class="name-field">
+            Your name
+            <input id="player-name" maxlength="10" autocomplete="nickname" placeholder="PLAYER" />
+          </label>
+          <ol id="ranks"></ol>
+        </aside>
+
+        <div class="stage-wrap" id="stage-wrap">
+          <div class="stage" id="stage">
+            <div class="shell" id="device">
+              <div class="nub" aria-hidden="true"></div>
+              <div class="led" id="led" aria-hidden="true"></div>
+              <div class="bezel">
+                <p class="super">POCKET</p>
+                <div class="frame">
+                  <i class="pix pix-t" aria-hidden="true"></i>
+                  <i class="pix pix-b" aria-hidden="true"></i>
+                  <i class="pix pix-l" aria-hidden="true"></i>
+                  <i class="pix pix-r" aria-hidden="true"></i>
+                  <div class="glass">
+                    <canvas id="lcd" width="300" height="540" aria-label="Pocket Grid is off. Press on."></canvas>
+                    <div class="shine" aria-hidden="true"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="pad on-body" aria-label="On device controls">
+                <div class="mini-row">
+                  <button type="button" class="dot" data-act="mute" aria-label="Sound"><span>SND</span></button>
+                  <button type="button" class="dot" data-act="power" aria-label="Power"><span>PWR</span></button>
+                  <button type="button" class="dot" data-act="reset" aria-label="Reset"><span>RST</span></button>
+                </div>
+                <div class="pad-row">
+                  <div class="dpad">
+                    <button type="button" class="dot" data-act="left" aria-label="Left"><span>L</span></button>
+                    <div class="dpad-col">
+                      <button type="button" class="dot" data-act="up" aria-label="Up"><span>U</span></button>
+                      <button type="button" class="dot" data-act="down" aria-label="Down"><span>D</span></button>
+                    </div>
+                    <button type="button" class="dot" data-act="right" aria-label="Right"><span>R</span></button>
+                  </div>
+                  <button type="button" class="big" data-act="rotate" aria-label="Rotate"><span>Z</span></button>
+                </div>
+              </div>
+              <p class="credit">Made with 🕹️ curiosity and nostalgia by <a href="https://mubasil.me" target="_blank" rel="noopener">Mubasil</a></p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="stick" id="stick" aria-label="Controls">
+          <div class="mini-row">
+            <button type="button" class="dot" data-act="mute" aria-label="Sound" aria-keyshortcuts="M"><span>SND</span></button>
+            <button type="button" class="dot" data-act="power" aria-label="Power" aria-keyshortcuts="P"><span>PWR</span></button>
+            <button type="button" class="dot" data-act="reset" aria-label="Reset" aria-keyshortcuts="R"><span>RST</span></button>
+          </div>
+          <div class="pad-row">
+            <div class="dpad">
+              <button type="button" class="dot" data-act="left" aria-label="Left" aria-keyshortcuts="ArrowLeft"><span>L</span></button>
+              <div class="dpad-col">
+                <button type="button" class="dot" data-act="up" aria-label="Up" aria-keyshortcuts="ArrowUp"><span>U</span></button>
+                <button type="button" class="dot" data-act="down" aria-label="Down" aria-keyshortcuts="ArrowDown"><span>D</span></button>
+              </div>
+              <button type="button" class="dot" data-act="right" aria-label="Right" aria-keyshortcuts="ArrowRight"><span>R</span></button>
+            </div>
+            <button type="button" class="big" data-act="rotate" aria-label="Rotate" aria-keyshortcuts="Z"><span>Z</span></button>
+          </div>
+          <p class="stick-note">Arrows move · Z acts · Esc back</p>
+        </aside>
+      </div>
+    </div>
+  </div>
+  <div class="name-gate" id="name-gate" hidden>
+    <form class="name-card" id="name-form">
+      <p class="name-kicker">Leaderboard</p>
+      <h2>Add your nickname</h2>
+      <p>Get on the leaderboard.</p>
+      <input id="nick" maxlength="10" autocomplete="nickname" spellcheck="false" placeholder="Nickname" aria-label="Nickname" />
+      <div class="name-picks" id="name-picks"></div>
+      <button class="go" type="submit">Let's play</button>
+    </form>
+  </div>
+  <p id="live" class="sr" aria-live="polite"></p>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
